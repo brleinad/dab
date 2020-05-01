@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap);
+
+:root {
+   --primary-color: #666;
+   --secondary-color: #e6e6e6;
+   --text-color: #1a1a1a;
+}
+
+body {
+   background: #444;
+   font-size: 100%
+}
+
+.banner {
+   display: grid;
+   align-items: center;
+   justify-content: center;
+   grid-template-columns: repeat(1, 1fr);
+   grid-template-rows: 90vh, 10vh;
+   grid-template-areas:
+   "main"
+   "nav";
+   height: 100vh;
+}
+
+.banner-main {
+   display: flex;
+   grid-area: main;
+   background-image: url(../images/elcap_jacob_hires.jpg);
+   background-position: center;
+   background-size: cover;
+   padding: 30px;
+   height: 90vh;
+   font-family: 'Open Sans', sans-serif;
+   flex-flow: column nowrap;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+/*
+.banner-main-item {
+   flex: 1 1 auto;
+   font-size: 3em;
+   text-transform: capitalize;
+   line-height: 2;
+   text-shadow: 2px 2px 2px var(--secondary-color);
+   padding: 50px;
+}
+*/
+
+.banner-main-item h1 {
+   flex: 1 1 auto;
+   font-size: 10em;
+   text-transform: capitalize;
+   line-height: 2;
+   text-shadow: 2px 2px 2px var(--secondary-color);
+   padding: 50px;
+   background: red;
+}
+
+.banner-main h2 {
+   font-size: 3em;
+   text-transform: capitalize;
+   line-height: 2;
+   text-shadow: 2px 2px 2px var(--secondary-color);
+   padding: 50px;
+}
+
+.banner-nav {
+   display: flex;
+   grid-area: nav;
+   height: 10vh;
+   background-color: white;
+   flex-flow: row nowrap;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--primary-color);
+}
+
+.nav-item {
+   flex: 1 1 auto;
+   text-align: center;
+}
+
+.nav-item a {
+   text-decoration: none;
+   font-family: 'Open Sans', sans-serif;
+   color: var(--secondary-color);
+}
