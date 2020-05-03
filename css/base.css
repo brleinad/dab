@@ -27,6 +27,7 @@ body {
    display: flex;
    grid-area: main;
    background-image: url(../images/elcap_jacob_hires.jpg);
+   background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
    height: 90vh;
