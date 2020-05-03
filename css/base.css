@@ -16,7 +16,7 @@ body {
    align-items: center;
    justify-content: center;
    grid-template-columns: repeat(1, 1fr);
-   grid-template-rows: 90vh, 10vh;
+   grid-template-rows: auto;
    grid-template-areas:
    "main"
    "nav";
@@ -29,39 +29,34 @@ body {
    background-image: url(../images/elcap_jacob_hires.jpg);
    background-position: center;
    background-size: cover;
-   padding: 30px;
    height: 90vh;
    font-family: 'Open Sans', sans-serif;
    flex-flow: column nowrap;
-   align-items: flex-start;
-   justify-content: center;
+   align-items: stretch; 
+   justify-content: flex-start;
+   align-content: center;
+   box-sizing: border-box;
 }
 
-/*
 .banner-main-item {
    flex: 1 1 auto;
-   font-size: 3em;
-   text-transform: capitalize;
-   line-height: 2;
+   font-size: 2em;
+   padding: 5px;
+   background: none;
+   text-align: center;
+   margin: 5px;
+}
+
+.banner-title {
+   font-size: 8em;
+   text-transform: uppercase;
    text-shadow: 2px 2px 2px var(--secondary-color);
    padding: 50px;
 }
-*/
 
-.banner-main-item h1 {
-   flex: 1 1 auto;
-   font-size: 10em;
+.banner-subtitle {
+   font-size: 2em;
    text-transform: capitalize;
-   line-height: 2;
-   text-shadow: 2px 2px 2px var(--secondary-color);
-   padding: 50px;
-   background: red;
-}
-
-.banner-main h2 {
-   font-size: 3em;
-   text-transform: capitalize;
-   line-height: 2;
    text-shadow: 2px 2px 2px var(--secondary-color);
    padding: 50px;
 }
@@ -86,4 +81,112 @@ body {
    text-decoration: none;
    font-family: 'Open Sans', sans-serif;
    color: var(--secondary-color);
+}
+
+
+.home {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas:
+   "title"
+   "slider";
+   height: 90vh;
+   background: none;
+   align-items: center;
+   justify-content: center;
+   padding: 0px 80px 0px 80px;
+}
+
+
+.slider {
+   width: 85vw;
+   height: 75vh;
+   text-align: center;
+   overflow: hidden;
+   background: grey;
+   grid-area: slider;
+}
+
+.slides {
+   width: 85vw;
+   height: 75vh;
+   display: flex;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+   width: 10px;
+   height: 10px;
+}
+
+.slides::-webkit-scrollbar-thumb {
+   background: black;
+   border-radius: 10px;
+}
+
+.slides::-webkit-scrollbar-track {
+   /*background: transparent;*/
+}
+
+.slides > div {
+   scroll-snap-align: center;
+   flex-shrink: 0;
+   width: 70vw;
+   height: 75vh;
+   margin-right: 0px;
+   border-radius: 10px;
+   background: #eee;
+   transform-origin: center center;
+   transform: scale(1);
+   transition: transform 0.5s;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 100px;
+}
+
+.slides > div:target {
+   transform: scale(0.8);
+}
+
+.post-preview {
+   display: flex;
+   flex-flow: column nowrap;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas:
+   "post-preview-title-area"
+   "post-preview-thumbnail-area"
+   "post-preview-text-area";
+   align-items: center;
+   justify-content: center;
+}
+
+/*
+.post-preview:hover {
+   transform: scale(1.3);
+}
+*/
+
+
+.post-preview-title {
+   grid-area: post-preview-title-area;
+   height: 10%;
+}
+
+.post-preview-thumbnail {
+   grid-area: post-preview-thumbnail-area;
+   height: 30%;
+   background: white;
+}
+
+.post-preview-text {
+   grid-area: post-preview-text-area;
+   height: 60%;
+   font-size: 0.5em;
 }
