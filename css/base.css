@@ -11,6 +11,7 @@ body {
    font-size: 100%
 }
 
+/*
 .banner {
    display: grid;
    align-items: center;
@@ -18,14 +19,13 @@ body {
    grid-template-columns: repeat(1, 1fr);
    grid-template-rows: auto;
    grid-template-areas:
-   "main"
-   "nav";
-   height: 100vh;
+   "banner-main-area";
+   height: 90vh;
 }
+*/
 
-.banner-main {
+.banner {
    display: flex;
-   grid-area: main;
    background-image: url(../images/elcap_jacob_hires.jpg);
    background-repeat: no-repeat;
    background-position: center;
@@ -39,7 +39,7 @@ body {
    box-sizing: border-box;
 }
 
-.banner-main-item {
+.banner-item {
    flex: 1 1 auto;
    font-size: 2em;
    padding: 5px;
@@ -62,11 +62,27 @@ body {
    padding: 50px;
 }
 
-.banner-nav {
+.main{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas:
+   "nav-area"
+   "title-area"
+   "slider-area";
+   height: 100vh;
+   background: none;
+   align-items: center;
+   justify-content: center;
+   grid-row-gap: 0px;
+   grid-column-gap: 0px;
+   grid-gap: 0px;
+}
+
+nav {
    display: flex;
-   grid-area: nav;
+   grid-area: nav-area;
    height: 10vh;
-   background-color: white;
    flex-flow: row nowrap;
    align-items: center;
    justify-content: space-between;
@@ -81,23 +97,17 @@ body {
 .nav-item a {
    text-decoration: none;
    font-family: 'Open Sans', sans-serif;
+   font-size: 2em;
    color: var(--secondary-color);
 }
 
-
-.home {
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: auto;
-   grid-template-areas:
-   "title"
-   "slider";
-   height: 90vh;
-   background: none;
-   align-items: center;
-   justify-content: center;
+.main-title {
+   grid-area: title-area;
+   text-align: center;
+   font-size: 3em;
+   background-color: yellow;
+   margin: 0px;
 }
-
 
 .slider {
    width: 100vw;
@@ -105,7 +115,7 @@ body {
    text-align: center;
    overflow: hidden;
    background: grey;
-   grid-area: slider;
+   grid-area: slider-area;
    /*padding: 0px 10vw 0px 10vw;*/
 }
 
@@ -146,7 +156,7 @@ body {
    width: 50vh;
    height: 72vh;
    margin-right: 0px;
-   border-radius: 15px;
+   border-radius: 25px;
    background: #fff;
    transform-origin: center center;
    transform: scale(1);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport" content="width=device-width, initial-scale=1">
+    <meta name=viewport" content="height=device-height, initial-scale=1">
+    <meta name="description" content="Daniel's Awesome Blog"/>
+    <link rel="stylesheet" href="css/base.css">
+    <title>{{ page.title }}</title>
+  </head> 
+  <body>
+
+    {% if page.name == 'index.html' %}
+      {% include banner.html %}
+    {% endif %}
+    <section class="main">
+      <nav class="banner-nav">
+        <div class="nav-item">
+          <a href="#">DAB</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">About</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Posts</a>
+        </div>
+      </nav>
+      {{ content }}
+      <footer>
+      </footer>
+    </section>
+  </body>
+</html>
