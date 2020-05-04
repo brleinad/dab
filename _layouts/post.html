@@ -2,13 +2,11 @@
 <html>
   {% include head.html %}
   <body>
-    {% if page.name == 'index.html' %}
-      {% include banner.html %}
-    {% endif %}
     <section class="main">
       {% include navbar.html %}
+      <h1 class="main-title">{{ page.title }}</h1>
       {{ content }}
-      {% include footer.html %}
     </section>
   </body>
+  {% include footer.html %}
 </html>

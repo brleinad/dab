@@ -69,7 +69,8 @@ body {
    grid-template-areas:
    "nav-area"
    "title-area"
-   "slider-area";
+   "slider-area"
+   "footer-area";
    height: 100vh;
    background: none;
    align-items: center;
@@ -189,5 +190,12 @@ nav {
 
 .post-preview-text {
    height: 60%;
-   font-size: 0.2em;
+   font-size: 10px;
+}
+
+footer  {
+   display: flex;
+   flex-flow: row nowrap;
+   background-color: white;
+   height: 7vh;  
 }

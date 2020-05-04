@@ -3,34 +3,20 @@ layout: default
 title: DAB
 ---
 <h2 class="main-title">Posts</h2>
-<div class="slider">
+<div id="posts" class="slider">
   <div class="slides">
-    <div id="post1" class="post-preview">
-      <h3 class="post-preview-title">
-        Post title 1
-      </h3>
-      <img src="" alt="Post thumbnail" class="post-preview-thumbnail">
-      <p class="post-preview-text">
-      This is the text for a post.
-      </p>
-    </div>
-    <div id="post2" class="post-preview">
-      <h3 class="post-preview-title">
-        Post title 2
-      </h3>
-      <img src="" alt="Post thumbnail" class="post-preview-thumbnail">
-      <p class="post-preview-text">
-      This is the text for a post.
-      </p>
-    </div>
-    <div id="post3" class="post-preview">
-      <h3 class="post-preview-title">
-        Post title 3
-      </h3>
-      <img src="" alt="Post thumbnail" class="post-preview-thumbnail">
-      <p class="post-preview-text">
-      This is the text for a post.
-      </p>
-    </div>
+    {% for post in site.posts %}
+      <div id="post1" class="post-preview">
+        <h3 class="post-preview-title">
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </h3>
+        <img src="" alt="Post thumbnail" class="post-preview-thumbnail">
+        <p class="post-preview-text">
+        <!--{{ post.excerpt }}-->
+        </p>
+      </div>
+    {% endfor %}
   </div>
 </div>
