@@ -13,9 +13,7 @@
 
 .banner {
    display: grid;
-   background-image: url(../images/elcap_jacob.jpg);
-   background-repeat: no-repeat;
-   background-position: center;
+   background: var(--primary-color) url(../images/elcap_jacob.jpg) no-repeat fixed center;
    background-size: cover;
    height: 90vh;
    height: calc(var(--vh, 1vh) * 90);
@@ -38,14 +36,16 @@
 .banner-title {
    font-size: 15rem;
    text-transform: uppercase;
-   text-shadow: 2px 2px 2px var(--secondary-color);
+   text-shadow: 4px 4px 4px var(--secondary-color);
+   font-weight: 700;
    padding: 50px;
 }
 
 .banner-subtitle {
-   font-size: 5rem;
+   font-size: 4rem;
+   font-weight: 500;
    text-transform: capitalize;
-   text-shadow: 2px 2px 2px var(--secondary-color);
+   text-shadow: 5px 5px 5px var(--secondary-color);
    padding: 50px;
 }
 
@@ -55,7 +55,7 @@
    grid-template-rows: auto;
    grid-template-areas:
    "nav-area"
-   "title-area"
+   /*"title-area"*/
    "slider-area"
    "footer-area";
    height: 100vh;
@@ -66,6 +66,8 @@
    grid-row-gap: 0px;
    grid-column-gap: 0px;
    grid-gap: 0px;
+   background: var(--primary-color) url(../images/elcap_jacob.jpg) no-repeat fixed center;
+   background-size: cover;
 }
 
 nav {
@@ -76,27 +78,24 @@ nav {
    flex-flow: row nowrap;
    align-items: center;
    justify-content: space-around;
-   background-color: var(--primary-color);
-   background-image: linear-gradient(to left, var(--primary-color) 10%, var(--secondary-color));
-   /*background: var(--primary-color) url(../images/elcap_jacob_hires.jpg) no-repeat fixed bottom; */
-   /*background-size: cover;*/
+   background-color: var(--secondary-color);
+   /*background-image: linear-gradient(to left, var(--primary-color) 10%, var(--secondary-color));*/
 }
 
 .nav-item {
-   flex: 0 1 auto;
    height: 90%;
    margin: 5px;
    padding: 5px;
-   justify-text: center;
+   /*justify-text: center;
    text-align: center;
-   /*background-color: black;*/
+   background-color: black;*/
 }
 
 .nav-item a {
    text-decoration: none;
    font-family: 'Open Sans', sans-serif;
-   font-size: 4rem;
-   color: var(--secondary-color);
+   font-size: 4.5rem;
+   color: var(--primary-color);
 }
 
 .main-title {
@@ -106,6 +105,7 @@ nav {
    font-weight: 500;
    background-color: var(--secondary-color);
    margin: 0px;
+   display: none;
 }
 
 .slider {
@@ -114,7 +114,6 @@ nav {
    height: calc(var(--vh, 1vh) * 75);
    text-align: center;
    overflow: hidden;
-   background: grey;
    grid-area: slider-area;
    /*padding: 0px 10vw 0px 10vw;*/
 }
@@ -128,7 +127,6 @@ nav {
    scroll-snap-type: x mandatory;
    scroll-behavior: smooth;
    -webkit-overflow-scrolling: touch;
-   background-color: #000;
    flex-flow: row nowrap;
    align-items: center;
    justify-content: flex-start;
