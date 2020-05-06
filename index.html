@@ -12,10 +12,11 @@ title: DAB
             {{ post.title }}
           </a>
         </h3>
-        <img src="" alt="Post thumbnail" class="post-preview-thumbnail">
-        <p class="post-preview-text">
-        <!--{{ post.excerpt }}-->
-        </p>
+        <img src="images/{{ post.title }}.jpg" alt="Post thumbnail" class="post-preview-thumbnail">
+          <p class="post-preview-text">
+          {{ post.excerpt }}
+          </p>
+        <a href="{{ post.url }}" class="post-button">Open</a>
       </div>
     {% endfor %}
   </div>

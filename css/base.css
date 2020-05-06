@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap);
-
 :root {
    --primary-color: #666;
    --secondary-color: #e6e6e6;
@@ -11,21 +9,8 @@ body {
    font-size: 100%
 }
 
-/*
 .banner {
    display: grid;
-   align-items: center;
-   justify-content: center;
-   grid-template-columns: repeat(1, 1fr);
-   grid-template-rows: auto;
-   grid-template-areas:
-   "banner-main-area";
-   height: 90vh;
-}
-*/
-
-.banner {
-   display: flex;
    background-image: url(../images/elcap_jacob_hires.jpg);
    background-repeat: no-repeat;
    background-position: center;
@@ -86,13 +71,21 @@ nav {
    height: 10vh;
    flex-flow: row nowrap;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-around;
    background-color: var(--primary-color);
+   background-image: linear-gradient(to left, var(--primary-color) 10%, var(--secondary-color));
+   /*background: var(--primary-color) url(../images/elcap_jacob_hires.jpg) no-repeat fixed bottom; */
+   /*background-size: cover;*/
 }
 
 .nav-item {
-   flex: 1 1 auto;
+   flex: 0 1 auto;
+   height: 90%;
+   margin: 5px;
+   padding: 5px;
+   justify-text: center;
    text-align: center;
+   /*background-color: black;*/
 }
 
 .nav-item a {
@@ -106,7 +99,7 @@ nav {
    grid-area: title-area;
    text-align: center;
    font-size: 3em;
-   background-color: yellow;
+   background-color: var(--secondary-color);
    margin: 0px;
 }
 
@@ -130,7 +123,7 @@ nav {
    -webkit-overflow-scrolling: touch;
    background-color: #000;
    flex-flow: row nowrap;
-   align-items: flex-start;
+   align-items: center;
    justify-content: flex-start;
 
 }
@@ -142,7 +135,7 @@ nav {
 }
 
 .slides::-webkit-scrollbar-thumb {
-   background: black;
+   background: purple;
    border-radius: 10px;
 }
 
@@ -155,7 +148,7 @@ nav {
    display: flex;
    flex-shrink: 0;
    width: 50vh;
-   height: 72vh;
+   height: 62vh;
    margin-right: 0px;
    border-radius: 25px;
    background: #fff;
@@ -179,7 +172,9 @@ nav {
 
 .post-preview-title {
    height: 10%;
-   font-size: 0.3em;
+   font-size: 12px;
+   margin: 10px;
+   color: var(--primary-color);
 }
 
 .post-preview-thumbnail {
@@ -189,13 +184,39 @@ nav {
 }
 
 .post-preview-text {
-   height: 60%;
+   height: 40%;
    font-size: 10px;
+   text-height: 14px;
+   margin: 15px;
+   text-align: left;
+   white-space: wrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.post-button {
+   text-decoration: none;
+   border: 2px solid purple;
+   border-radius: 20px;
+   font-size: 15px;
+   background-color: var(--seconday-color);
+   padding: 10px;
+   margin: 10px;
 }
 
 footer  {
    display: flex;
    flex-flow: row nowrap;
-   background-color: white;
    height: 7vh;  
+   align-items: center;
+   justify-content: center;
+   background: var(--primary-color) url(../images/elcap_jacob_hires.jpg) no-repeat fixed bottom;
+   background-size: cover;
+}
+
+
+.footer-item {
+   margin: 0px 10px 0px 10px;
+   text-decoration: none;
+   color: var(--secondary-color);
 }
