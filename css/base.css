@@ -2,20 +2,23 @@
    --primary-color: #666;
    --secondary-color: #e6e6e6;
    --text-color: #1a1a1a;
+   font-size: 62.5%
+   html,
+   body {
+      background: #444;
+      font-size: 1.6rem;
+   }
 }
 
-body {
-   background: #444;
-   font-size: 100%
-}
 
 .banner {
    display: grid;
-   background-image: url(../images/elcap_jacob_hires.jpg);
+   background-image: url(../images/elcap_jacob.jpg);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
    height: 90vh;
+   height: calc(var(--vh, 1vh) * 90);
    font-family: 'Open Sans', sans-serif;
    flex-flow: column nowrap;
    align-items: stretch; 
@@ -26,7 +29,6 @@ body {
 
 .banner-item {
    flex: 1 1 auto;
-   font-size: 2em;
    padding: 5px;
    background: none;
    text-align: center;
@@ -34,14 +36,14 @@ body {
 }
 
 .banner-title {
-   font-size: 8em;
+   font-size: 15rem;
    text-transform: uppercase;
    text-shadow: 2px 2px 2px var(--secondary-color);
    padding: 50px;
 }
 
 .banner-subtitle {
-   font-size: 2em;
+   font-size: 5rem;
    text-transform: capitalize;
    text-shadow: 2px 2px 2px var(--secondary-color);
    padding: 50px;
@@ -57,6 +59,7 @@ body {
    "slider-area"
    "footer-area";
    height: 100vh;
+   height: calc(var(--vh, 1vh) * 100);
    background: none;
    align-items: center;
    justify-content: center;
@@ -69,6 +72,7 @@ nav {
    display: flex;
    grid-area: nav-area;
    height: 10vh;
+   height: calc(var(--vh, 1vh) * 10);
    flex-flow: row nowrap;
    align-items: center;
    justify-content: space-around;
@@ -91,14 +95,15 @@ nav {
 .nav-item a {
    text-decoration: none;
    font-family: 'Open Sans', sans-serif;
-   font-size: 2em;
+   font-size: 4rem;
    color: var(--secondary-color);
 }
 
 .main-title {
    grid-area: title-area;
    text-align: center;
-   font-size: 3em;
+   font-size: 6rem;
+   font-weight: 500;
    background-color: var(--secondary-color);
    margin: 0px;
 }
@@ -106,6 +111,7 @@ nav {
 .slider {
    width: 100vw;
    height: 75vh;
+   height: calc(var(--vh, 1vh) * 75);
    text-align: center;
    overflow: hidden;
    background: grey;
@@ -116,6 +122,7 @@ nav {
 .slides {
    width: 100vw;
    height: 75vh;
+   height: calc(var(--vh, 1vh) * 75);
    display: flex;
    overflow-x: auto;
    scroll-snap-type: x mandatory;
@@ -158,7 +165,6 @@ nav {
    position: relative;
    justify-content: center;
    align-items: center;
-   font-size: 100px;
    display: flex;
    flex-flow: column nowrap;
    background-image: linear-gradient(to left, #333, #eee 10%);
@@ -172,36 +178,48 @@ nav {
 
 .post-preview-title {
    height: 10%;
-   font-size: 12px;
+   font-size: 1.5rem;
    margin: 10px;
    color: var(--primary-color);
+   font-weight: 300;
+   padding: 2rem;
+
 }
 
 .post-preview-thumbnail {
    height: 30%;
    background: white;
    font-size: 0.3em;
+   padding: 15px;
+   border-radius: 5px;
 }
 
+/*
+.post-preview-thumbnail:hover{
+   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+*/
+
 .post-preview-text {
-   height: 40%;
-   font-size: 10px;
+   height: 20%;
+   font-size: 2rem;
    text-height: 14px;
    margin: 15px;
    text-align: left;
    white-space: wrap;
    overflow: hidden;
    text-overflow: ellipsis;
+   padding: 5rem;
 }
 
 .post-button {
    text-decoration: none;
    border: 2px solid purple;
-   border-radius: 20px;
-   font-size: 15px;
+   border-radius: 30px;
+   font-size: 3rem;
    background-color: var(--seconday-color);
-   padding: 10px;
-   margin: 10px;
+   padding: 2rem;
+   margin: 3rem;
 }
 
 footer  {
@@ -210,7 +228,7 @@ footer  {
    height: 7vh;  
    align-items: center;
    justify-content: center;
-   background: var(--primary-color) url(../images/elcap_jacob_hires.jpg) no-repeat fixed bottom;
+   background: var(--primary-color) url(../images/elcap_jacob.jpg) no-repeat fixed bottom;
    background-size: cover;
 }
 

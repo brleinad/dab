@@ -7,4 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>{{ page.title }}</title>
+  <script>
+    // We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+  </script>
 </head>
