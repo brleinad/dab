@@ -306,7 +306,7 @@ footer  {
       grid-template-areas:
       "banner-title-area banner-subtitle-area" 
       "banner-title-area banner-subsubtitle-area";
-      height: 80vh
+      height: 92vh
    }
 
    .banner-title {
@@ -334,6 +334,10 @@ footer  {
    .nav-item a {
       font-size: 1.5rem;
       padding: 5rem;
+   }
+
+   .slider {
+      height: 85vh;
    }
 
    .slides {
