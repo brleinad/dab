@@ -13,12 +13,17 @@
 
 .banner {
    display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas:
+   "banner-title-area"
+   "banner-subtitle-area"
+   "banner-subsubtitle-area";
    background: var(--primary-color) url(../images/elcap_jacob.jpg) no-repeat fixed center;
    background-size: cover;
    height: 90vh;
    height: calc(var(--vh, 1vh) * 90);
    font-family: 'Open Sans', sans-serif;
-   flex-flow: column nowrap;
    align-items: stretch; 
    justify-content: flex-start;
    align-content: center;
@@ -49,6 +54,14 @@
    padding: 50px;
 }
 
+.banner-subsubtitle {
+   font-size: 4rem;
+   font-weight: 500;
+   text-transform: capitalize;
+   text-shadow: 5px 5px 5px var(--secondary-color);
+   padding: 50px;
+}
+
 .main{
    display: grid;
    grid-template-columns: 1fr;
@@ -56,10 +69,12 @@
    grid-template-areas:
    "nav-area"
    /*"title-area"*/
-   "slider-area"
+   "content-area"
    "footer-area";
+   /*
    height: 100vh;
    height: calc(var(--vh, 1vh) * 100);
+   */
    background: none;
    align-items: center;
    justify-content: center;
@@ -83,12 +98,17 @@ nav {
 }
 
 .nav-item {
-   height: 90%;
    margin: 5px;
    padding: 5px;
    /*justify-text: center;
    text-align: center;
    background-color: black;*/
+}
+
+.nav-main-item {
+   border: 3px solid purple;
+   border-radius: 30px;
+   padding: 1.2rem;
 }
 
 .nav-item a {
@@ -114,7 +134,7 @@ nav {
    height: calc(var(--vh, 1vh) * 75);
    text-align: center;
    overflow: hidden;
-   grid-area: slider-area;
+   grid-area: content-area;
    /*padding: 0px 10vw 0px 10vw;*/
 }
 
@@ -154,6 +174,7 @@ nav {
    flex-shrink: 0;
    width: 50vh;
    height: 62vh;
+   height: calc(var(--vh, 1vh) * 62);
    margin-right: 0px;
    border-radius: 25px;
    background: #fff;
@@ -220,7 +241,31 @@ nav {
    margin: 3rem;
 }
 
+.post-content {
+   grid-area: content-area;
+   display: flex;
+   flex-flow: column nowrap;
+   height: 75vh;
+   margin: auto;
+   width: 100vw;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.post-image {
+   width: 40%;
+   padding: 15px;
+   border-radius: 5px;
+   background: black;
+}
+
+.post-text {
+   background: var(--secondary-color);
+}
+
 footer  {
+   grid-area: footer-area;
    display: flex;
    flex-flow: row nowrap;
    height: 7vh;  
@@ -236,3 +281,98 @@ footer  {
    text-decoration: none;
    color: var(--secondary-color);
 }
+
+
+@media (min-width: 1000px) {
+   .banner {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+      "banner-title-area banner-subtitle-area" 
+      "banner-title-area banner-subsubtitle-area";
+      height: 80vh
+   }
+
+   .banner-title {
+      grid-area: banner-title-area;
+      padding: 0px;
+   }
+
+   .banner-subtitle {
+      grid-area: banner-subtitle-area;
+      padding: 0px;
+      font-size: 3rem;
+   }
+
+   .banner-subsubtitle {
+      grid-area: banner-subsubtitle-area;
+      padding: 0px;
+      font-size: 3rem;
+   }
+
+   nav {
+      height: 5vh;
+      justify-content: space-between;
+   }
+
+   .nav-item a {
+      font-size: 1.5rem;
+      padding: 5rem;
+   }
+
+   .slides {
+      margin: 0px 30px 0px 30px;
+      padding: 0px 30px 0px 30px;
+
+   }
+
+   .post-preview {
+      font-size: 0.5rem;
+      justify-content: space-around;
+   }
+
+   .post-preview-title {
+      font-size: 0.5rem;
+      padding: 0px;
+      margin: 0.5rem;
+   }
+
+   .post-preview-thumbnail {
+      font-size: 1.5rem;
+      padding: 0px;
+      margin: 0px;
+      margin: 0.5rem;
+   }
+
+   .post-preview-text {
+      font-size: 1rem;
+      padding: 0px;
+      margin: 0.5rem;
+   }
+
+   .post-button {
+      font-size: 1.5rem;
+      padding: 5px;
+      margin: 5px;
+   }
+
+   .post-content {
+      height: 85vh;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      }
+
+   .post-image {
+      width: 30%;
+   }
+
+   .post-text {
+      width: 40%;
+      font-size: 1rem;
+   }
+
+   footer {
+      background: var(--primary-color);
+   }
+}
+
