@@ -1,55 +1,61 @@
 h1 {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
 }
 
 h2 {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
 }
 
 h3 {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
 }
 
 p {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
 }
 
 strong {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
-   font-weight: 400;
+   font-size: 1rem;
+   font-weight: 800;
 }
 
 em {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
+   font-style: italic;
 }
 
 u {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
+   text-decoration: underline;
 }
 
 q {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
 }
 
 a {
    font-family: 'Montserrat', sans-serif;
-   font-size: 2em;
+   font-size: 1rem;
    font-weight: 400;
    text-decoration: none;
    color: purple;
+}
+
+button:hover {
+   background: white;
 }

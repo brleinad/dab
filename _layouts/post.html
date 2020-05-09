@@ -5,11 +5,23 @@
     <section class="main">
       {% include navbar.html %}
       <div class="post-content">
-        <h1 class="post-title">{{ page.title }}</h1>
+      <header class="post-header">
+          <img class="avatar" src="/images/hanging_belay.jpg">
+        <div>
+          <h3>Author: Daniel RB</h3>
+          <h3>Title: Engineer</h3>
+          <h3>School: Udacity</h3>
+          <h3>Bio: Software developer with a passion of climbing rocks.</h3>
+        </div>
+      </header>
+        <h1 class="post-title">
+          {{ page.title }}
+        </h1>
         <img src="/images/{{ page.title }}.jpg" alt="Post thumbnail" class="post-image">
-        <p class="post-text">
+        <br>
+        <div class="post-text">
           {{ content }}
-        </p>
+        </div>
       </div>
     </section>
   </body>

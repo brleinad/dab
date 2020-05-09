@@ -65,7 +65,7 @@
 .main{
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-rows: auto;
+   grid-template-rows: minmax(min-content, max-content);
    grid-template-areas:
    "nav-area"
    /*"title-area"*/
@@ -182,7 +182,7 @@ nav {
    transform: scale(1);
    transition: transform 0.5s;
    position: relative;
-   justify-content: center;
+   justify-content: space-around;
    align-items: center;
    display: flex;
    flex-flow: column nowrap;
@@ -197,7 +197,7 @@ nav {
 
 .post-preview-title {
    height: 10%;
-   font-size: 1.5rem;
+   font-size: 2.5rem;
    margin: 10px;
    color: var(--primary-color);
    font-weight: 300;
@@ -206,7 +206,7 @@ nav {
 }
 
 .post-preview-thumbnail {
-   height: 30%;
+   height: 35%;
    background: white;
    font-size: 0.3em;
    padding: 15px;
@@ -241,12 +241,32 @@ nav {
    margin: 3rem;
 }
 
+.post-header {
+   grid-area: title-area;
+   display: flex;
+   flex-flow: row nowrap;
+   background: var(--secondary-color);
+   width: 90%;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+   margin: 2rem;
+}
+
+.post-header h3 {
+   font-size: 1.5rem;
+}
+
+.avatar {
+   width: 20%;
+   border-radius: 100%;
+   margin: 1rem;
+}
 
 .post-content {
    grid-area: content-area;
    display: flex;
    flex-flow: column nowrap;
-   height: 75vh;
    margin: auto;
    width: 100vw;
    align-items: center;
@@ -351,7 +371,7 @@ footer  {
    }
 
    .post-preview-title {
-      font-size: 0.5rem;
+      font-size: 1.5rem;
       padding: 0px;
       margin: 0.5rem;
    }
@@ -375,19 +395,40 @@ footer  {
       margin: 5px;
    }
 
+   .post-header {
+      margin: 1rem 10rem 1rem 10rem;
+      width: 60%;
+   }
+
+   .post-header h3 {
+      font-size: 1rem;
+   }
+
+   .avatar {
+      width: 15%;
+      border-radius: 100%;
+      margin: 3rem;
+   }
+
+   .post-title {
+      display: inline;
+   }
+
    .post-content {
-      height: 85vh;
       flex-flow: row wrap;
       justify-content: space-around;
       }
 
    .post-image {
-      width: 20%;
+      width: 30%;
+      margin: 3rem;
    }
 
    .post-text {
-      width: 40%;
-      font-size: 1rem;
+      width: 50%;
+      font-size: 1.5rem;
+      line-height: 1.2rem;
+      margin: 3rem;
    }
 
    footer {
